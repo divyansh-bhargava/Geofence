@@ -15,6 +15,7 @@ import Contacts from "./pages/Contacts";
 import AlertHistory from "./pages/AlertHistory";
 import Alerts from "./pages/Alerts";
 import Profile from "./pages/Profile";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
     <Router>
       <Routes>
         {/* Default route → go to login */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        {/* <Route path="/" element={<Navigate to="/" replace />} /> */}
 
         {/* Auth pages */}
         <Route path="/login" element={<Login />} />
@@ -36,6 +37,7 @@ function App() {
         <Route path="/alert-history" element={<AlertHistory />} />
         <Route path="/alerts" element={<Alerts />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/" element={<LandingPage />} />
 
         {/* Fallback for unknown routes */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
