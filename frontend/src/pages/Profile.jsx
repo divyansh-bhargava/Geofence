@@ -3,6 +3,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../components/Sidebar";
 import { useSidebar } from "../context/SidebarContext";
+import { useDispatch } from "react-redux";
+import { updateProfile } from "../redux/slices/authSlice";
 
 function Profile() {
   const { isCollapsed } = useSidebar();
@@ -31,12 +33,15 @@ function Profile() {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
+      const dispatch = useDispatch();
       if (data.success) {
         setProfile({
           name: data.data.name,
           email: data.data.email,
           mobile: data.data.mobile,
         });
+        dispatch(updateProfile(data.data));
+        toast.success("✅ Profile updated successfully!");
       } else {
         toast.error("⚠️ Failed to fetch profile details.");
       }

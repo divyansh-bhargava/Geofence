@@ -29,6 +29,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
+    console.log(form);
 
     if (form.password !== form.confirmPassword) {
       toast.warning("⚠️ Passwords do not match!");
@@ -55,6 +56,7 @@ function Register() {
       });
 
       const data = await res.json();
+      console.log(data);
 
       if (data.success) {
         toast.info("📩 OTPs sent to your email and mobile");

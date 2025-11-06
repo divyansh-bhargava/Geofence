@@ -3,6 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaHome, FaBell, FaCog, FaSignOutAlt, FaMapMarkerAlt, FaUserFriends, FaHistory, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import LogoutPopup from "./LogoutModal";
 import { useSidebar } from "../context/SidebarContext"; // Import context
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/slices/authSlice";
+
 
 function Sidebar() {
   const [showLogout, setShowLogout] = useState(false);
@@ -14,9 +17,10 @@ function Sidebar() {
   const isActive = (path) => location.pathname === path;
 
   // 🧹 Logout handler
+  const dispatch = useDispatch();
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    dispatch(logout());
     setShowLogout(false);
     navigate("/login");
   };

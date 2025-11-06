@@ -16,6 +16,7 @@ import AlertHistory from "./pages/AlertHistory";
 import Alerts from "./pages/Alerts";
 import Profile from "./pages/Profile";
 import LandingPage from "./pages/LandingPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -31,12 +32,15 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* Main App pages */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/geofence" element={<GeoFence />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/alert-history" element={<AlertHistory />} />
-        <Route path="/alerts" element={<Alerts />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/dashboard"
+          element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
+        />
+        <Route path="/geofence" element={<ProtectedRoute><GeoFence /></ProtectedRoute>} />
+        <Route path="/contacts" element={<ProtectedRoute><Contacts /></ProtectedRoute>} />
+        <Route path="/alert-history" element={<ProtectedRoute><AlertHistory /></ProtectedRoute>} />
+        <Route path="/alerts" element={<ProtectedRoute><Alerts/></ProtectedRoute>} />
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/" element={<LandingPage />} />
 
         {/* Fallback for unknown routes */}

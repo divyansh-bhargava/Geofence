@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../redux/slices/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
@@ -17,6 +19,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    console.log(form);
 
     if (!form.login || !form.password) {
       toast.warning("⚠️ Please enter your email/mobile and password.");
@@ -42,18 +45,13 @@ function Login() {
 
       const data = await res.json();
 
+      const dispatch = useDispatch();
+
       if (data.success) {
-        localStorage.setItem("token", data.data.token);
-        localStorage.setItem("user", JSON.stringify(data.data.user));
+        dispatch(loginSuccess(data.data)); // store user & token globally
+        toast.success("✅ Login successful!");
+        navigate("/dashboard");
 
-        toast.success("✅ Login successful! Redirecting...", {
-          position: "top-right",
-          autoClose: 2000,
-        });
-
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 2000);
       } else {
         toast.error(data.message || "Invalid credentials. Please try again.", {
           position: "top-right",

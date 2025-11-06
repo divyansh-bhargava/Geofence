@@ -11,6 +11,7 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { useSelector } from "react-redux";
 
 // Custom User Icon
 const userIcon = new L.Icon({
@@ -40,7 +41,11 @@ function Dashboard() {
   const [activityFeed, setActivityFeed] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
-  const token = localStorage.getItem("token");
+  const { user, token, isAuthenticated } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!isAuthenticated) navigate("/login");
+  })
 
   // Update time every second
   useEffect(() => {
