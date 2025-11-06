@@ -1,0 +1,101 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #0a0a0f;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 2rem;
+  color: #00f5ff;
+  margin-bottom: 1rem;
+}
+
+/* Stats Cards */
+.stats-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 150px;
+  background: rgba(15, 15, 25, 0.95);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: #ff4ef8;
+  margin: 0;
+}
+
+.stat-card p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Map */
+.map-section {
+  margin-top: 1rem;
+}
+
+.map-box {
+  height: 450px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.3);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .dashboard-title {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .stat-card {
+    min-width: 120px;
+  }
+
+  .map-box {
+    height: 300px;
+  }
+}
+
+/* Panic Button */
+.panic-button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #ff0000, #ff4d4d);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.panic-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #cc0000, #ff1a1a);
+}

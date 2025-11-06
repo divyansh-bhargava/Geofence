@@ -1,0 +1,128 @@
+/* Background */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a0a0f;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem;
+}
+
+/* Card */
+.login-box {
+  background: rgba(15, 15, 25, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5),
+              0 0 35px rgba(255, 0, 255, 0.3);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #00f5ff;
+}
+.logo h1 {
+  font-size: 1.5rem;
+}
+.logo-icon {
+  font-size: 2rem;
+}
+
+/* Title */
+.login-title {
+  color: #ff4ef8;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form input {
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #00f5ff;
+  transition: 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #ff4ef8;
+  box-shadow: 0 0 15px #ff4ef8;
+}
+
+.login-form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00f5ff, #ff4ef8);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.login-form button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Extra links */
+.extra-links {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.extra-links a {
+  color: #00f5ff;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  color: #ff4ef8;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .login-box {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  .login-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Register specific tweaks */
+.auth-footer {
+  text-align: center;
+  margin-top: 15px;
+  color: #aaa;
+}
+
+.auth-footer a {
+  color: #00f5d4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}

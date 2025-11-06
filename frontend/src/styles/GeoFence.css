@@ -1,0 +1,97 @@
+.geofence-container {
+  display: flex;
+  background: #0a0a0f;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.geofence-main {
+  flex: 1;
+  padding: 2rem;
+  color: #fff;
+}
+
+/* ===== Geofence Table Styling ===== */
+.geofence-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: #111827;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #e5e7eb;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.geofence-table thead {
+  background: linear-gradient(90deg, #00f5ff, #ff4ef8);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.geofence-table th,
+.geofence-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Row hover */
+.geofence-table tbody tr {
+  transition: background 0.2s ease;
+}
+.geofence-table tbody tr:hover {
+  background: rgba(0, 255, 255, 0.05);
+}
+
+/* Status column */
+.geofence-table td:nth-child(5) {
+  font-weight: bold;
+}
+.geofence-table td:nth-child(5):contains("On") {
+  color: #10b981; /* Green for active */
+}
+.geofence-table td:nth-child(5):contains("Off") {
+  color: #ef4444; /* Red for off */
+}
+
+/* Action buttons */
+.geofence-table button {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.geofence-table button:first-child {
+  background: #10b981;
+  color: #fff;
+}
+.geofence-table button:first-child:hover {
+  background: #059669;
+  transform: scale(1.05);
+}
+
+.geofence-table button:last-child {
+  background: #ef4444;
+  color: #fff;
+}
+.geofence-table button:last-child:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .geofence-table th,
+  .geofence-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}

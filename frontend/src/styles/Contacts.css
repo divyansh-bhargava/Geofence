@@ -1,0 +1,12 @@
+.contacts-container {
+  display: flex;
+  background: #0a0a0f;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.contacts-main {
+  flex: 1;
+  padding: 2rem;
+  color: #fff;
+}

@@ -1,0 +1,38 @@
+.geofence-table-card {
+  background: rgba(15, 15, 25, 0.95);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.geofence-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+.geofence-table th,
+.geofence-table td {
+  padding: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.geofence-table button {
+  margin: 0 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.geofence-table button:hover {
+  opacity: 0.9;
+}
+
+.delete-btn {
+  background: #ff004c;
+  color: #fff;
+}

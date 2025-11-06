@@ -1,0 +1,21 @@
+.map-card {
+  background: rgba(15, 15, 25, 0.95);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.map-box {
+  background: #1a1a24;
+  height: 300px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder {
+  color: #888;
+  font-size: 0.9rem;
+}
