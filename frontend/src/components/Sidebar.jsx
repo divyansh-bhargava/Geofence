@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaHome, FaBell, FaCog, FaSignOutAlt, FaMapMarkerAlt, FaUserFriends, FaHistory, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import LogoutPopup from "./LogoutModal";
+import { useSidebar } from "../context/SidebarContext"; // Import context
 
 function Sidebar() {
   const [showLogout, setShowLogout] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const { isCollapsed, setIsCollapsed } = useSidebar(); // Use context instead of local state
   const navigate = useNavigate();
   const location = useLocation();
 

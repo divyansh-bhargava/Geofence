@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
+import { useSidebar } from "../context/SidebarContext"; // Import context
 
 function Alerts() {
+  const { isCollapsed } = useSidebar(); // Get collapse state
   const [alerts, setAlerts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedAlert, setSelectedAlert] = useState(null);
@@ -149,7 +151,8 @@ function Alerts() {
 
       <Sidebar />
 
-      <main className="flex-1 p-6 overflow-y-auto">
+      {/* Main content with dynamic left margin based on sidebar state */}
+      <main className={`flex-1 p-6 overflow-y-auto transition-all duration-300 ${isCollapsed ? 'ml-20' : 'ml-64'}`}>
         {/* Header Section */}
         <div className="mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">

@@ -14,6 +14,7 @@ import GeoFence from "./pages/Geofence";
 import Contacts from "./pages/Contacts";
 import AlertHistory from "./pages/AlertHistory";
 import Alerts from "./pages/Alerts";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/alert-history" element={<AlertHistory />} />
         <Route path="/alerts" element={<Alerts />} />
+        <Route path="/profile" element={<Profile />} />
 
         {/* Fallback for unknown routes */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
